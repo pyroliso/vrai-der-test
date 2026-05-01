@@ -10,27 +10,15 @@ async function loadBooks() {
   const library = document.getElementById("library");
 
   // ---- CSV PARSER ROBUSTE ----
-  function parseCSV(text) {
-    const lines = text.split("\n").filter(l => l.trim() !== "");
-    const result = [];
-
-    for (let i = 1; i < lines.length; i++) {
-      const line = lines[i];
-
-      const values = [];
-      let current = "";
-      let insideQuotes = false;
-
-      for (let char of line) {
-        if (char === '"') {
-          insideQuotes = !insideQuotes;
-        } else if (char === "," && !insideQuotes) {
-          values.push(current);
-          current = "";
-        } else {
-          current += char;
-        }
-      }
+function parseCSV(text) {
+  return text
+    .split("\n")
+    .map(l => l.trim())
+    .filter(l => l !== "")
+    .map(line =>
+      line.split(",").map(v => v.trim().replace(/"/g, ""))
+    );
+}
 
       values.push(current);
 
