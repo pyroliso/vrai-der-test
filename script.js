@@ -146,11 +146,11 @@ function updateDateTime() {
   const now = new Date();
   const hour = now.getHours();
 
-  const date = now.toLocaleDateString("fr-FR");;
+  const date = now.toLocaleDateString("fr-FR");
   const time = now.toLocaleTimeString("fr-FR");
 
   document.getElementById("datetime").textContent =
-    date + ", il est " + time + "." ;
+    date + ", il est " + time + ".";
 
   document.body.classList.remove(
     "morning",
@@ -161,14 +161,11 @@ function updateDateTime() {
 
   if (hour >= 6 && hour < 11) {
     document.body.classList.add("morning");
-  } 
-  else if (hour >= 11 && hour < 18) {
+  } else if (hour >= 11 && hour < 18) {
     document.body.classList.add("noon");
-  } 
-  else if (hour >= 18 && hour < 22) {
+  } else if (hour >= 18 && hour < 22) {
     document.body.classList.add("sunset");
-  } 
-  else {
+  } else {
     document.body.classList.add("night");
   }
 }
