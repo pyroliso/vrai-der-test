@@ -173,5 +173,5 @@ function updateDateTime() {
   }
 }
 
-setInterval(updateDateTime, 1000);
+setInterval(updateDateTime, 60000);
 updateDateTime();
