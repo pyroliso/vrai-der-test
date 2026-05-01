@@ -1,3 +1,5 @@
+console.log(rows);
+
 async function loadBooks() {
  const SHEET_BASE =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO7zteSriNnLpXUFLXajCFIE-L27NalLUSo2PBFhNAMg1ddXYeBV6as8v4MMb3_S6hhIsp2J9uXo2b/pub?output=csv";
